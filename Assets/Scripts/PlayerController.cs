@@ -80,8 +80,8 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x) * Mathf.Rad2Deg - 90.0f;
         body.rotation = angle;
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveVertical = Input.GetAxisRaw("Vertical");
 
         if (GameManager.Instance.UseRelativeControls)
         {
@@ -92,25 +92,6 @@ public class PlayerController : MonoBehaviour
         var direction = moveVertical * basisX + moveHorizontal * basisY;
         direction.Normalize();
         body.velocity = direction * currentSpeed;
-
-        //// Badly done wrap around...
-        //if (transform.position.y >= map.height)
-        //{
-        //    body.MovePosition(transform.position - new Vector3(0, map.height * 2, 0));
-        //}
-        //else if (transform.position.y <= -map.height)
-        //{
-        //    body.MovePosition(transform.position + new Vector3(0, map.height * 2, 0));
-        //}
-
-        //if (transform.position.x >= map.width)
-        //{
-        //    body.MovePosition(transform.position - new Vector3(map.width * 2, 0, 0));
-        //}
-        //else if (transform.position.x <= -map.width)
-        //{
-        //    body.MovePosition(transform.position + new Vector3(map.width * 2, 0, 0));
-        //}
 
         if (Input.GetButtonDown("Cancel"))
         {

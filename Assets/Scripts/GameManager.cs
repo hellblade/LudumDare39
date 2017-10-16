@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     int scoreAtStart;
 
-    public bool UseRelativeControls { get; set; } = false;
+    public bool UseRelativeControls { get; set; } = true;
 
     public void ToggleRelativeControls()
     {
