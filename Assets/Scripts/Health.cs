@@ -85,11 +85,16 @@ public class Health : MonoBehaviour
             return false;
         }
 
+        // Short circuit so that killed only gets invoked once
+        if (CurrentHealth <= 0)
+            return true;
+
         CurrentHealth -= amount;
 
         if (CurrentHealth <= 0)
         {
             killed.Invoke();
+            CurrentHealth = 0;
 
             if (destroyOnDeath)
             {
