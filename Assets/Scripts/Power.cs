@@ -26,12 +26,19 @@ public class Power : MonoBehaviour
     }
 
     public bool UsePower(float amount)
-    {                
+    {
+        if (amount == 0)
+            return true;
+   
+        if (CurrentPower == 0)
+            return false;
+
         CurrentPower -= amount;
 
         if (CurrentPower <= 0 && amount > 0)
         {
             depleted.Invoke();
+            CurrentPower = 0;
             return false;
         }
 
