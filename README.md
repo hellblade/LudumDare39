@@ -18,3 +18,5 @@ Additional changes since the dare:
 
 16/10/2017:
 	- Updated to latest Unity version
+	- Removed smoothing from input controls to provider better feel
+	- Default to the 'relative' control scheme
