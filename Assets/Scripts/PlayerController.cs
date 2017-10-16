@@ -93,25 +93,6 @@ public class PlayerController : MonoBehaviour
         direction.Normalize();
         body.velocity = direction * currentSpeed;
 
-        //// Badly done wrap around...
-        //if (transform.position.y >= map.height)
-        //{
-        //    body.MovePosition(transform.position - new Vector3(0, map.height * 2, 0));
-        //}
-        //else if (transform.position.y <= -map.height)
-        //{
-        //    body.MovePosition(transform.position + new Vector3(0, map.height * 2, 0));
-        //}
-
-        //if (transform.position.x >= map.width)
-        //{
-        //    body.MovePosition(transform.position - new Vector3(map.width * 2, 0, 0));
-        //}
-        //else if (transform.position.x <= -map.width)
-        //{
-        //    body.MovePosition(transform.position + new Vector3(map.width * 2, 0, 0));
-        //}
-
         if (Input.GetButtonDown("Cancel"))
         {
             Time.timeScale = 0;
