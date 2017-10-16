@@ -27,6 +27,9 @@ public class Power : MonoBehaviour
 
     public bool UsePower(float amount)
     {
+        if (amount == 0)
+            return true;
+   
         if (CurrentPower == 0)
             return false;
 
