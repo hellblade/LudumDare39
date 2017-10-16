@@ -32,6 +32,7 @@ public class Power : MonoBehaviour
         if (CurrentPower <= 0 && amount > 0)
         {
             depleted.Invoke();
+            CurrentPower = 0;
             return false;
         }
 
